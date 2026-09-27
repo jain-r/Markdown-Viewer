@@ -1,0 +1,29 @@
+appId: local.markdownlivepreview
+productName: Markdown Live Preview
+copyright: Copyright © tanabe/markdown-live-preview (AGPL-3.0); local packaging
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - electron/**/*
+  - package.json
+
+extraResources:
+  - from: dist
+    to: dist
+    filter:
+      - "**/*"
+
+asar: true
+
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  signAndEditExecutable: false
+
+portable:
+  artifactName: MarkdownLivePreview-Portable.exe
